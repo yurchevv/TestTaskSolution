@@ -26,9 +26,14 @@ public class PathHelper
             return 1;
         }
 
-        if (m <= 0 || n <= 0)
+        if (m <= 0)
         {
-            throw new ArgumentOutOfRangeException("Размерность не может быть отрицательной или равной нулю");
+            throw new ArgumentOutOfRangeException($"Размерность m = {m} не может быть отрицательной или равной нулю");
+        }
+
+        if (n <= 0)
+        {
+            throw new ArgumentOutOfRangeException($"Размерность n = {n} не может быть отрицательной или равной нулю");
         }
 
         if (m + n > 20)
@@ -85,7 +90,7 @@ public class PathHelper
     /// </summary>
     /// <param name="number"> Текущее состояние подсчета факториала числа или сам вычисленный факториал </param>
     /// <returns> Текущее значение состояния подсчета или вычисленный факториал числа </returns>
-    public static long Factorial(long number)
+    private static long Factorial(long number)
     {
         if (number == 1 || number == 0)
         {
